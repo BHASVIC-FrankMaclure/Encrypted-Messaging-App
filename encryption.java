@@ -9,11 +9,12 @@ public class encryption {
         this.message = message;
         byte[] bytes = message.getBytes(StandardCharsets.UTF_8);
         int newLength = (16 -(bytes.length % 16)) % 16;
+        System.out.println(Arrays.toString(bytes));
         int[] bytes2 = new int[(newLength + bytes.length)];
         for(int i = 0 ; i < bytes.length ; i++){
             bytes2[i] = bytes[i];
         }
-        sBox_jumble NewBox = new sBox_jumble(bytes2);
-        System.out.println(Arrays.toString(NewArray));
+        System.out.println(Arrays.toString(bytes2));
+        sBox_jumble.sBox__jumble(bytes2);
     }
 }
