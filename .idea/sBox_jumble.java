@@ -15,6 +15,13 @@ public class sBox_jumble {
             {10,2,12,11,3,14,4,1,5,9,0,8,7,6,13,15},
             {6,5,8,0,15,10,13,1,7,11,12,9,4,2,14,3}
     };
+
+    int[] Array;
+
+    //Constructor method
+    public sBox_jumble(int[] Array) {
+        this.Array = Array;
+    }
     public static int[] sBox__jumble(int[] Array){
         int[] newArray = new int[16];
         Random rand = new Random();
@@ -22,7 +29,7 @@ public class sBox_jumble {
         for(int i=0;i<16;i++){
             newArray[sBox[randomNum][i]] = Array[i];
         }
-
+        System.out.println(Arrays.toString(newArray));
         return newArray;
     }
 }
