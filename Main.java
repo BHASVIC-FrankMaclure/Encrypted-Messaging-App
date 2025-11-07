@@ -1,6 +1,5 @@
 // Libraries
 import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
 
 // Main class
@@ -10,8 +9,7 @@ public static void main(String[] args){
     System.out.println("Enter your message: ");
     String message = scanner.nextLine();
     encryption newEncryption = new encryption(message);
-    String stringOutput = newEncryption.encryption(message);
-    Random rand = new Random();
-    System.out.println(stringOutput);
+    int[] stringOutput = newEncryption.encryption(message);
+    System.out.println(Arrays.toString(stringOutput));
     }
 }

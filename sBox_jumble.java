@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Random;
 
 public class sBox_jumble {
@@ -16,13 +15,16 @@ public class sBox_jumble {
             {6,5,8,0,15,10,13,1,7,11,12,9,4,2,14,3}
     };
     public static int[] sBox__jumble(int[] Array){
-        int[] newArray = new int[16];
+        int[] newArray = new int[Array.length + 1];
         Random rand = new Random();
         int randomNum = rand.nextInt(10);
         for(int i=0;i<16;i++){
             newArray[sBox[randomNum][i]] = Array[i];
         }
-
+        for(int i = 16; i > Array.length; i++){
+            newArray[i] = Array[i+1];
+        }
+        newArray[newArray.length-1] = randomNum;
         return newArray;
     }
 }
