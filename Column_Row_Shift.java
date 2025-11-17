@@ -28,9 +28,6 @@ public class Column_Row_Shift {
             cShiftedArray[i + CRBox[2][randomNum]] = tempArray3[i];
             cShiftedArray[i + CRBox[3][randomNum]] = tempArray4[i];
         }
-        for(int i = 16; i == Array.length-1; i++){
-            cShiftedArray[i] = Array[i];
-        }
         cShiftedArray[cShiftedArray.length-1] = randomNum;
         return cShiftedArray;
     }
@@ -53,9 +50,6 @@ public class Column_Row_Shift {
             rShiftedArray[i + CRBox[randomNum][1]] = tempArray2[i];
             rShiftedArray[i + CRBox[randomNum][2]] = tempArray3[i];
             rShiftedArray[i + CRBox[randomNum][3]] = tempArray4[i];
-        }
-        for(int i = 16; i > Array.length; i++){
-            rShiftedArray[i] = Array[i+1];
         }
         rShiftedArray[rShiftedArray.length-1] = randomNum;
         return rShiftedArray;

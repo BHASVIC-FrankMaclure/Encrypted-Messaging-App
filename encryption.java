@@ -16,11 +16,11 @@ public class encryption {
         for(int i = 0 ; i < bytes.length ; i++){
             Array[i] = bytes[i];
         }
-        for(int i = 0; i < 12; i++){
+        for(int i = 0; i < 2; i++){
             Array = sBox_jumble.sBox__jumble(Array);
             System.out.println(Arrays.toString(Array));
-            Array = Column_Row_Shift.RowShift(Array);
-            System.out.println(Arrays.toString(Array));
+            //Array = Column_Row_Shift.RowShift(Array);
+            //System.out.println(Arrays.toString(Array));
 //            Array = Column_Row_Shift.ColumnShift(Array);
 //            System.out.println(Arrays.toString(Array));
         }
