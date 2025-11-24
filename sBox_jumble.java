@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Arrays;
 
 public class sBox_jumble {
     //My beautiful sBox
@@ -15,8 +16,10 @@ public class sBox_jumble {
             {6,5,8,0,15,10,13,1,7,11,12,9,4,2,14,3}
     };
     public static int[] sBox__jumble(int[] Array){
-        int[] newArray = new int[16];
-        int[] key = new int[Array.length - 16 + 1];
+        int[] newArray;
+        newArray = Arrays.copyOfRange(Array,0,16);
+        int[] key;
+        key = Arrays.copyOfRange(Array,15,Array.length);
         int[] returnArray = new int[newArray.length + key.length];
         Random rand = new Random();
         int randomNum = rand.nextInt(10);
@@ -24,8 +27,16 @@ public class sBox_jumble {
         for(int i=0;i<16;i++){
             newArray[sBox[randomNum][i]] = Array[i];
         }
+        for(int i = 0; i < newArray.length; i++){
+            returnArray[i] = newArray[i];
+        }
+        for(int i = 1; i < key.length; i++){
+            returnArray[i + 15] = key[i];
+        }
+        if(key.length == 1){
+            returnArray[returnArray.length-1] = randomNum;
+        }
+        System.out.println(randomNum);
         return returnArray;
     }
 }
-
-// Split the array up into newArray and key then add them together again after processing
